@@ -1,0 +1,41 @@
+{% extends 'default_layout.dhtml' %}
+
+{% load i18n admin_modify adminmedia %}
+
+{% block style %}
+	<link rel="stylesheet" type="text/css" href="{% admin_media_prefix %}css/forms.css" />
+
+	<script type="text/javascript" src="{% admin_media_prefix %}js/core.js"></script>
+	<script type="text/javascript" src="{% admin_media_prefix %}js/getElementsBySelector.js"></script>
+	
+	<!-- http://groups.google.com/group/django-users/browse_thread/thread/2f529966472c479d -->
+	<script type="text/javascript" src="/admin/js/i18n.js"></script>
+
+	{{ profile_form.media }}	
+	
+	<script type="foo"></script>
+	
+	{{ block.super }}
+{% endblock %}
+
+{% block title %}
+	User Profile
+{% endblock %}
+
+{% block heading %}
+	User Profile
+{% endblock %}
+
+{% block body %}
+	<form method="post" enctype="multipart/form-data">
+		{% csrf_token %}
+		<table class="ruled user-profile">
+		{{ profile_form.as_table }}
+		</table>
+		
+		<div class="submit-row">
+			<input type="submit" name="save" value="Save" />
+			<input type="button" value="Cancel" onclick="window.history.back(); return false;" />
+		</div>
+	</form>
+{% endblock %}

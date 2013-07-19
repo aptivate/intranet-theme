@@ -1,0 +1,3 @@
+This app contains models and tests that depend on more than one
+independent app (e.g. search and documents), and those which are
+specific to a custom Intranet and not general to all Intranets. 
