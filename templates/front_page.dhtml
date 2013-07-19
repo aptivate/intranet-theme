@@ -30,7 +30,7 @@
 			{% if global.user.is_authenticated %}
 				{{ global.user.full_name }}
 			{% else %}
-				to the ATA Intranet
+				to the Aptivate Demo Intranet
 			{% endif %}
 		</h2>
 		<p>
