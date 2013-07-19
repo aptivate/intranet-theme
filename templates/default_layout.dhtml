@@ -63,7 +63,7 @@
 						</ul>
 					</div>
 					{% if user.username %}
-						<form class="searchform" method="get" action="{% url search %}">
+						<form class="searchform" method="get" action="{% url 'search' %}">
 							{% comment %}<span class="search-for">Search for:</span>{% endcomment %}
 							<span class="search-models">{{ search.form.models }}</span>
 							<span class="search-input">{{ search.form.q }}</span>

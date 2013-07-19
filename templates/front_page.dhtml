@@ -9,19 +9,19 @@
 {% block body %}
 	{% if global.user.is_authenticated %}
 		<ul id="quick_links">
-			<li><a class="addlink" href="{% url admin:documents_document_add %}">Add document</a></li>
-			<li><a class="changelink" href="{% url user_profile %}">Edit my profile</a></li>
+			<li><a class="addlink" href="{% url 'admin:documents_document_add' %}">Add document</a></li>
+			<li><a class="changelink" href="{% url 'user_profile' %}">Edit my profile</a></li>
 			{% if user.is_manager %}
-				<li><a class="changelink" href="{% url admin:documents_documenttype_changelist %}">Document types</a></li>
-				<li><a class="changelink" href="{% url admin:binder_program_changelist %}">Programs</a></li>
-				<li><a class="addlink" href="{% url admin:binder_intranetuser_add %}">Add person</a></li>
+				<li><a class="changelink" href="{% url 'admin:documents_documenttype_changelist' %}">Document types</a></li>
+				<li><a class="changelink" href="{% url 'admin:binder_program_changelist' %}">Programs</a></li>
+				<li><a class="addlink" href="{% url 'admin:binder_intranetuser_add' %}">Add person</a></li>
 			{% endif %}
-			<li><a class="changelink" href="mailto:intranet@ata.gov.et?subject=Intranet:%20">Give feedback</a></li>
+			<li><a class="changelink" href="mailto:info-intranet-demo@aptivate.org">Give feedback</a></li>
 		</ul>
 	{% else %}
 		<div class="home-login">
 			<h3>Please log in to access this site.</h3>
-			<a class="addlink" href="{% url django.contrib.auth.views.login %}">log in</a> 
+			<a class="addlink" href="{% url 'django.contrib.auth.views.login' %}">log in</a> 
 		</div>
 	{% endif %}
 	
